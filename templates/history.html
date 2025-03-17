@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Data</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        td {
+            background-color: #f9f9f9;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover td {
+            background-color: #eaf2f8;
+        }
+
+        /* Borders and shadow */
+        th, td {
+            border: 1px solid #ddd;
+        }
+
+        table th, table td {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>CREDIT DATA</h2>
+    
+    <table>
+        <tr>
+            <th>Income</th>
+            <th>Limit</th>
+            <th>Cards</th>
+            <th>Age</th>
+            <th>Education</th>
+            <th>Gender</th>
+            <th>Student</th>
+            <th>Married</th>
+            <th>Ethnicity</th>
+            <th>Predicted</th>
+        </tr>
+        {% for user in userdetails %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[4] }}</td>
+            <td>{{ user[5] }}</td>
+            <td>{{ user[6] }}</td>
+            <td>{{ user[7] }}</td>
+            <td>{{ user[8] }}</td>
+            <td>{{ user[9] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
